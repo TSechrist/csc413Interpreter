@@ -5,7 +5,7 @@ import interpreter.VirtualMachine;
 public class FalseBranchCode extends ByteCode {
 
     @Override
-    public void init(String arg) {
+    public void init(String argument) {
 
     }
 

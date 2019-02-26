@@ -5,7 +5,7 @@ import interpreter.VirtualMachine;
 public class HaltCode extends ByteCode {
 
     @Override
-    public void init(String arg) {
+    public void init(String argument) {
 
     }
 

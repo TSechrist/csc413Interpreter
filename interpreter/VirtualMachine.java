@@ -9,9 +9,13 @@ public class VirtualMachine {
     private Program program;
     private int pc;
     private boolean isRunning;
+    private boolean isDumping = false;
 
     protected VirtualMachine(Program program) {
         this.program = program;
     }
 
+    protected void executeProgram() {
+
+    }
 }
