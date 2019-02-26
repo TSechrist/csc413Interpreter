@@ -1,4 +1,16 @@
 package interpreter.bytecode;
 
-public class ArgsCode {
+import interpreter.VirtualMachine;
+
+public class ArgsCode extends ByteCode {
+
+    @Override
+    public void init(String arg) {
+
+    }
+
+    @Override
+    public void execute(VirtualMachine vm) {
+
+    }
 }

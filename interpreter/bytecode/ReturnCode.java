@@ -1,4 +1,16 @@
 package interpreter.bytecode;
 
-public class ReturnCode {
+import interpreter.VirtualMachine;
+
+public class ReturnCode extends ByteCode {
+
+    @Override
+    public void init(String arg) {
+
+    }
+
+    @Override
+    public void execute(VirtualMachine vm) {
+
+    }
 }

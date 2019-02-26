@@ -1,4 +1,16 @@
 package interpreter.bytecode;
 
-public class WriteCode {
+import interpreter.VirtualMachine;
+
+public class WriteCode extends ByteCode {
+
+    @Override
+    public void init(String arg) {
+
+    }
+
+    @Override
+    public void execute(VirtualMachine vm) {
+
+    }
 }

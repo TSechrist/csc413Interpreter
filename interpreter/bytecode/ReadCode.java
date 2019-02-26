@@ -1,4 +1,16 @@
 package interpreter.bytecode;
 
-public class ReadCode {
+import interpreter.VirtualMachine;
+
+public class ReadCode extends ByteCode {
+
+    @Override
+    public void init(String arg) {
+
+    }
+
+    @Override
+    public void execute(VirtualMachine vm) {
+
+    }
 }

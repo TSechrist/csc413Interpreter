@@ -1,4 +1,16 @@
 package interpreter.bytecode;
 
-public class CallCode {
+import interpreter.VirtualMachine;
+
+public class CallCode extends ByteCode {
+
+    @Override
+    public void init(String arg) {
+
+    }
+
+    @Override
+    public void execute(VirtualMachine vm) {
+
+    }
 }
