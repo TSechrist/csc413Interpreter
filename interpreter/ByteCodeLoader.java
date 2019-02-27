@@ -4,11 +4,15 @@ package interpreter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+import interpreter.bytecode.ByteCode;
 
 
 public class ByteCodeLoader extends Object {
 
     private BufferedReader byteSource;
+    private StringTokenizer token;
     
     /**
      * Constructor Simply creates a buffered reader.
@@ -28,6 +32,33 @@ public class ByteCodeLoader extends Object {
      *      the newly created ByteCode instance via the init function.
      */
     public Program loadCodes() {
-       return null;
+
+        Program loadedProgram = new Program();
+        CodeTable.init();
+        String className;
+
+        try{
+            while(byteSource.readLine() != null)
+            {
+                token = new StringTokenizer(byteSource.readLine());
+                className = CodeTable.getClassName(token.nextToken());
+                Class c = Class.forName("interpreter.bytecode." + className);
+                ByteCode bc = (ByteCode)c.getDeclaredConstructor().newInstance();
+                ArrayList<String> parsedString = new ArrayList<String>();
+
+                while(token.hasMoreTokens())
+                {
+                    parsedString.add(token.nextToken());
+                }
+                
+                bc.init(parsedString);
+                loadedProgram.addByteCode(bc);
+
+            }
+        }
+        catch(Exception e){}
+
+        loadedProgram.resolveAddrs();
+        return loadedProgram;
     }
 }
