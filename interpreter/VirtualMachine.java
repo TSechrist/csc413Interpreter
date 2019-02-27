@@ -8,7 +8,7 @@ public class VirtualMachine {
     private Stack returnAddrs;
     private Program program;
     private int pc;
-    private boolean isRunning;
+    private boolean isRunning = true;
     private boolean isDumping = false;
 
     protected VirtualMachine(Program program) {
@@ -17,5 +17,15 @@ public class VirtualMachine {
 
     protected void executeProgram() {
 
+    }
+
+    public void setRunning(boolean boolRunning)
+    {
+        isRunning = boolRunning;
+    }
+
+    public void setDumping(boolean boolDumping)
+    {
+        isDumping = boolDumping;
     }
 }
