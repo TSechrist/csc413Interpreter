@@ -1,7 +1,7 @@
 package interpreter;
 
 import java.util.ArrayList;
-import interpreter.bytecode.ByteCode;
+import interpreter.bytecode.*;
 
 public class Program {
 
@@ -29,6 +29,55 @@ public class Program {
      */
     public void resolveAddrs() {
 
+        ArrayList<LabelCode> labelList = new ArrayList<>();
+
+        for(int i = 0; i < program.size(); i++)
+        {
+            if(program.get(i) instanceof LabelCode)
+            {
+                labelList.add((LabelCode)program.get(i));
+            }
+        }
+
+        for(int i = 0; i < program.size(); i++)
+        {
+            ByteCode temp;
+            if(program.get(i) instanceof GotoCode)
+            {
+                temp = program.get(i);
+                for(int j = 0; j < labelList.size(); j ++)
+                {
+                    if(((GotoCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
+                    {
+                        System.out.println("Goto");
+                    }
+                }
+            }
+            else if(program.get(i) instanceof FalseBranchCode)
+            {
+                temp = program.get(i);
+                for(int j = 0; j < labelList.size(); j ++)
+                {
+                    if(((FalseBranchCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
+                    {
+                        System.out.println("FalseBranch");
+                    }
+                }
+
+            }
+            else if(program.get(i) instanceof CallCode)
+            {
+                temp = program.get(i);
+                for(int j = 0; j < labelList.size(); j ++)
+                {
+                    if(((CallCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
+                    {
+                        System.out.println("Call");
+                    }
+                }
+
+            }
+        }
     }
 
     protected void addByteCode(ByteCode code)

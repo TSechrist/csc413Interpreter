@@ -35,25 +35,23 @@ public class ByteCodeLoader extends Object {
 
         Program loadedProgram = new Program();
         CodeTable.init();
-        String className;
 
         try{
-            while(byteSource.readLine() != null)
+            while(byteSource.ready())
             {
+                ArrayList<String> parsedString = new ArrayList<String>();
                 token = new StringTokenizer(byteSource.readLine());
-                className = CodeTable.getClassName(token.nextToken());
+                String className = CodeTable.getClassName(token.nextToken());
                 Class c = Class.forName("interpreter.bytecode." + className);
                 ByteCode bc = (ByteCode)c.getDeclaredConstructor().newInstance();
-                ArrayList<String> parsedString = new ArrayList<String>();
 
                 while(token.hasMoreTokens())
                 {
                     parsedString.add(token.nextToken());
                 }
-                
+
                 bc.init(parsedString);
                 loadedProgram.addByteCode(bc);
-
             }
         }
         catch(Exception e){}
