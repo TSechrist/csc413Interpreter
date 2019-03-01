@@ -30,18 +30,20 @@ public class Program {
     public void resolveAddrs() {
 
         ArrayList<LabelCode> labelList = new ArrayList<>();
+        ByteCode temp;
 
         for(int i = 0; i < program.size(); i++)
         {
             if(program.get(i) instanceof LabelCode)
             {
+                ((LabelCode)program.get(i)).setPoint(i);
                 labelList.add((LabelCode)program.get(i));
             }
         }
 
         for(int i = 0; i < program.size(); i++)
         {
-            ByteCode temp;
+
             if(program.get(i) instanceof GotoCode)
             {
                 temp = program.get(i);
@@ -49,21 +51,19 @@ public class Program {
                 {
                     if(((GotoCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
                     {
-                        System.out.println("Goto");
+                        ((GotoCode)temp).setPoint(labelList.get(j).getPoint());
                     }
                 }
             }
             else if(program.get(i) instanceof FalseBranchCode)
             {
                 temp = program.get(i);
-                for(int j = 0; j < labelList.size(); j ++)
-                {
-                    if(((FalseBranchCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
+                for(int j = 0; j < labelList.size(); j ++) {
+                    if (((FalseBranchCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
                     {
-                        System.out.println("FalseBranch");
+                        ((FalseBranchCode)temp).setPoint(labelList.get(j).getPoint());
                     }
                 }
-
             }
             else if(program.get(i) instanceof CallCode)
             {
@@ -72,10 +72,9 @@ public class Program {
                 {
                     if(((CallCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
                     {
-                        System.out.println("Call");
+                        ((CallCode)temp).setPoint(labelList.get(j).getPoint());
                     }
                 }
-
             }
         }
     }

@@ -39,7 +39,7 @@ public class ByteCodeLoader extends Object {
         try{
             while(byteSource.ready())
             {
-                ArrayList<String> parsedString = new ArrayList<String>();
+                ArrayList<String> parsedString = new ArrayList<>();
                 token = new StringTokenizer(byteSource.readLine());
                 String className = CodeTable.getClassName(token.nextToken());
                 Class c = Class.forName("interpreter.bytecode." + className);

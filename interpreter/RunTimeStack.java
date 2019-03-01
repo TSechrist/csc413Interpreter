@@ -15,5 +15,23 @@ public class RunTimeStack {
         // point of our language, so its frame pointer is 0.
         framePointer.add(0);
     }
-    
+
+    public int pop()
+    {
+        int temp = runTimeStack.get(runTimeStack.size() - 1);
+        runTimeStack.remove(runTimeStack.size() - 1);
+        return temp;
+    }
+    public int peek()
+    {
+        if(runTimeStack.size() > 0)
+        {
+            return runTimeStack.get(runTimeStack.size() - 1);
+        }
+        else
+        {
+            return runTimeStack.get(0);
+        }
+    }
+
 }

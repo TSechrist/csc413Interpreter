@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class FalseBranchCode extends ByteCode {
 
     private String label;
+    private int point;
 
     @Override
     public void init(ArrayList<String> argument) {
@@ -17,11 +18,22 @@ public class FalseBranchCode extends ByteCode {
     @Override
     public void execute(VirtualMachine vm) {
 
+        if(vm.popStack() == 0)
+        {
+            vm.setPc(point);
+        }
+
     }
 
     public String getLabel() {
 
         return label;
+    }
+
+    public void setPoint(int newPoint) {
+
+        point = newPoint;
+        System.out.println("FalseBranch: " + point);
     }
 
 }

@@ -18,11 +18,13 @@ public class GotoCode extends ByteCode {
     @Override
     public void execute(VirtualMachine vm) {
 
+        vm.setPc(point);
     }
 
     public void setPoint(int newPoint) {
 
         point = newPoint;
+        System.out.println("Goto point: " + point);
     }
 
     public int getPoint(){

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class CallCode extends ByteCode {
 
     private String label;
+    private int point;
 
     @Override
     public void init(ArrayList<String> argument) {
@@ -22,6 +23,12 @@ public class CallCode extends ByteCode {
     public String getLabel(){
 
         return label;
+    }
+
+    public void setPoint(int newPoint){
+
+        point = newPoint;
+        System.out.println("CallCode: " + point);
     }
 
 }
