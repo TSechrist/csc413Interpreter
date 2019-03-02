@@ -18,6 +18,8 @@ public class CallCode extends ByteCode {
     @Override
     public void execute(VirtualMachine vm) {
 
+        vm.pushReturnAddrs(vm.getPc());
+        vm.setPc(point);
     }
 
     public String getLabel(){
@@ -28,7 +30,6 @@ public class CallCode extends ByteCode {
     public void setPoint(int newPoint){
 
         point = newPoint;
-        System.out.println("CallCode: " + point);
     }
 
 }

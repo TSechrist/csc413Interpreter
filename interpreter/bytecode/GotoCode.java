@@ -24,7 +24,6 @@ public class GotoCode extends ByteCode {
     public void setPoint(int newPoint) {
 
         point = newPoint;
-        System.out.println("Goto point: " + point);
     }
 
     public int getPoint(){

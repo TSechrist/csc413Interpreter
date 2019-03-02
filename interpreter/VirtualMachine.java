@@ -26,45 +26,49 @@ public class VirtualMachine {
         while(isRunning)
         {
             ByteCode code = program.getCode(pc);
+            System.out.println(program.getCode(pc) + " " + pc);
             code.execute(this);
             pc++;
         }
-
     }
-    public void setRunning(boolean boolRunning)
-    {
+
+    public void setRunning(boolean boolRunning) {
         isRunning = boolRunning;
     }
-    public void setDumping(boolean boolDumping)
-    {
+
+    public void setDumping(boolean boolDumping) {
         isDumping = boolDumping;
     }
 
 
-
-    public int getPc()
-    {
+    public int getPc() {
         return pc;
     }
-    public void setPc(int set)
-    {
+
+    public void setPc(int set) {
         pc = set;
     }
-    public int popReturnAddrs()
-    {
+
+
+    public int popReturnAddrs() {
         return (int)returnAddrs.pop();
     }
-    public void pushReturnAddrs(int addressGiven)
-    {
+    public void pushReturnAddrs(int addressGiven) {
         returnAddrs.push(addressGiven);
     }
-    public int popStack()
-    {
+
+
+    public int popStack() {
         return runStack.pop();
     }
 
+    public int peekStack() {
+        return runStack.peek();
+    }
 
-
+    public void pushStack(int value) {
+//        runStack.push(value);
+    }
 
 
 }
