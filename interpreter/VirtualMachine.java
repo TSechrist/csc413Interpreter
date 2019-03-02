@@ -30,45 +30,66 @@ public class VirtualMachine {
             code.execute(this);
             pc++;
         }
+
+        System.out.println("Frame Size: " + runStack.getFrameSize());
+
+        for(int i = 0; i < runStack.size(); i++)
+        {
+            System.out.println(runStack.pop());
+        }
+
     }
 
     public void setRunning(boolean boolRunning) {
+
         isRunning = boolRunning;
     }
-
     public void setDumping(boolean boolDumping) {
+
         isDumping = boolDumping;
     }
 
-
     public int getPc() {
+
         return pc;
     }
-
     public void setPc(int set) {
+
         pc = set;
     }
 
-
     public int popReturnAddrs() {
+
         return (int)returnAddrs.pop();
     }
     public void pushReturnAddrs(int addressGiven) {
+
         returnAddrs.push(addressGiven);
     }
 
-
     public int popStack() {
+
         return runStack.pop();
     }
 
     public int peekStack() {
+
         return runStack.peek();
     }
 
     public void pushStack(int value) {
-//        runStack.push(value);
+
+        runStack.push(value);
     }
 
+    public void newFrame(int value){
+
+        runStack.newFrame(value);
+    }
+
+    public void popFrame(){
+
+        runStack.popFrame();
+    }
 
 }

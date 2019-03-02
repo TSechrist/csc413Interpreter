@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class ReadCode extends ByteCode {
 
+    private String input;
+
     @Override
     public void init(ArrayList<String> argument) {
 
