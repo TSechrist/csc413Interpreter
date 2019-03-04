@@ -24,8 +24,6 @@ public class BopCode extends ByteCode {
             vm.pushStack(op1 + op2);
         else if(operator.equals("-"))
             vm.pushStack(op2 - op1);
-        else if(operator.equals("-"))
-            vm.pushStack(op2 - op1);
         else if(operator.equals("*"))
             vm.pushStack(op2 * op1);
         else if(operator.equals("/"))

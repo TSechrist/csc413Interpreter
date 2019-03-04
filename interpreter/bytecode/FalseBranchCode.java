@@ -18,9 +18,9 @@ public class FalseBranchCode extends ByteCode {
     @Override
     public void execute(VirtualMachine vm) {
 
-//        if(vm.popStack() == 0)
+        if(vm.popStack() == 0)
         {
-//            vm.setPc(point);
+            vm.setPc(point);
         }
 
     }

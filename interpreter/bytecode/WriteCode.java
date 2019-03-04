@@ -14,5 +14,6 @@ public class WriteCode extends ByteCode {
     @Override
     public void execute(VirtualMachine vm) {
 
+        System.out.println(vm.peekStack());
     }
 }

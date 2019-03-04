@@ -26,16 +26,9 @@ public class VirtualMachine {
         while(isRunning)
         {
             ByteCode code = program.getCode(pc);
-            System.out.println(program.getCode(pc) + " " + pc);
+//            System.out.println(program.getCode(pc) + " " + pc);
             code.execute(this);
             pc++;
-        }
-
-        System.out.println("Frame Size: " + runStack.getFrameSize());
-
-        for(int i = 0; i < runStack.size(); i++)
-        {
-            System.out.println(runStack.pop());
         }
 
     }
@@ -92,4 +85,13 @@ public class VirtualMachine {
         runStack.popFrame();
     }
 
+    public int storeStack(int value){
+
+        return runStack.storeStack(value);
+    }
+
+    public int loadStack(int value){
+
+        return runStack.loadStack(value);
+    }
 }
