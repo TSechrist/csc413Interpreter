@@ -84,13 +84,7 @@ public class RunTimeStack {
 
     public int loadStack(int value) {
 
-        //I need to fix this
-        //Stack<Integer> tempStack = new Stack<>();
-        //Iterator i = framePointer.iterator();
-        //int temp = 0;
-        //while(value)
-
-        int temp = runTimeStack.get(framePointer.peek());
+        int temp = runTimeStack.get(framePointer.peek() + value);
         runTimeStack.add(temp);
         return temp;
     }

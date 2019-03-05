@@ -26,7 +26,7 @@ public class VirtualMachine {
         while(isRunning)
         {
             ByteCode code = program.getCode(pc);
-//            System.out.println(program.getCode(pc) + " " + pc);
+            System.out.println(program.getCode(pc) + " " + pc);
             code.execute(this);
             pc++;
         }
@@ -93,5 +93,10 @@ public class VirtualMachine {
     public int loadStack(int value){
 
         return runStack.loadStack(value);
+    }
+
+    public int size(){
+
+        return runStack.size();
     }
 }
