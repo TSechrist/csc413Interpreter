@@ -36,6 +36,11 @@ public class CallCode extends ByteCode {
 
     public String print(){
 
-        return ("CALL " + label + "  " + label + "(" + argumentsPassed +  ")\n");
+        String formattedLabel = label;
+        if(!(label.isEmpty()) && label.charAt(0) == '<' && label.charAt(1) == '<')
+        {
+
+        }
+        return ("CALL " + label + "  " + formattedLabel + "(" + argumentsPassed +  ")\n");
     }
 }
