@@ -99,12 +99,20 @@ public class RunTimeStack {
     public String peekFrame(){
 
         String temp = "";
+        boolean flag = true;
         if(framePointer.peek() != 0 && framePointer.peek() != runTimeStack.size())
         {
-            for(int i = framePointer.peek(); i != framePointer.peek() - 1; i--)
+            for(int i = framePointer.peek(); i < runTimeStack.size(); i++)
             {
-                System.out.println("i: " + i);
-                temp = (temp + runTimeStack.get(i));
+                if(flag)
+                {
+                    temp = ("" + runTimeStack.get(i));
+                    flag = false;
+                }
+                else
+                {
+                    temp = (temp + ", " + runTimeStack.get(i));
+                }
             }
         }
 
