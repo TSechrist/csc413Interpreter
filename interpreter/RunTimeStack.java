@@ -89,4 +89,32 @@ public class RunTimeStack {
         return temp;
     }
 
+    public void dump()
+    {
+
+        ArrayList<Integer> cloneStack;
+        cloneStack = (ArrayList)runTimeStack.clone();
+        ArrayList holdArray[] = new ArrayList[framePointer.size()];
+
+
+        for(int i = framePointer.size(); i > 0; i--)
+        {
+            holdArray[i - 1] = new ArrayList<>();
+            int front = framePointer.get(i - 1);
+            int size = cloneStack.size();
+
+            for(int j = front; j < size; j++)
+            {
+                holdArray[i - 1].add(cloneStack.remove(front));
+            }
+        }
+
+        for(int i = 0; i < framePointer.size(); i++)
+        {
+            System.out.print(holdArray[i].toString());
+        }
+
+        System.out.println();
+    }
+
 }

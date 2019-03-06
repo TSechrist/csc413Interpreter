@@ -1,0 +1,8 @@
+LIT 2
+LIT 2
+BOP +
+LIT 2
+BOP +
+BOP +
+WRITE
+HALT

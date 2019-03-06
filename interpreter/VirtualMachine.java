@@ -10,7 +10,7 @@ public class VirtualMachine {
     private Program program;
     private int pc;
     private boolean isRunning = true;
-    private boolean isDumping = false;
+    private boolean isDumping = true;
 
     protected VirtualMachine(Program program) {
         this.program = program;
@@ -26,9 +26,14 @@ public class VirtualMachine {
         while(isRunning)
         {
             ByteCode code = program.getCode(pc);
-            System.out.println(program.getCode(pc) + " " + pc);
+//            System.out.println(program.getCode(pc) + " " + pc);
             code.execute(this);
             pc++;
+            if(isDumping)
+            {
+                System.out.println(code.getClass().getSimpleName());
+                runStack.dump();
+            }
         }
 
     }
