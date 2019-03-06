@@ -34,4 +34,9 @@ public class LabelCode extends ByteCode {
 
         point = newPoint;
     }
+
+    public String print(){
+
+        return ("LABEL " + label + "\n");
+    }
 }

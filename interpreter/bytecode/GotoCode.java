@@ -36,4 +36,9 @@ public class GotoCode extends ByteCode {
         return label;
     }
 
+    public String print(){
+
+        return ("GOTO " + label + "\n");
+    }
+
 }

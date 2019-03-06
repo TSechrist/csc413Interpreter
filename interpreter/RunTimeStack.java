@@ -17,11 +17,18 @@ public class RunTimeStack {
         framePointer.add(0);
     }
 
+    /*
+    I created a few methods to help control the run stacks.
+     */
     public int pop() {
 
-        int temp = runTimeStack.get(runTimeStack.size() - 1);
-        runTimeStack.remove(runTimeStack.size() - 1);
-        return temp;
+        if(runTimeStack.size() > 0)
+        {
+            int temp = runTimeStack.get(runTimeStack.size() - 1);
+            runTimeStack.remove(runTimeStack.size() - 1);
+            return temp;
+        }
+        return 0;
     }
 
     public int peek() {
@@ -89,9 +96,27 @@ public class RunTimeStack {
         return temp;
     }
 
+    public String peekFrame(){
+
+        String temp = "";
+        if(framePointer.peek() != 0 && framePointer.peek() != runTimeStack.size())
+        {
+            for(int i = framePointer.peek(); i != framePointer.peek() - 1; i--)
+            {
+                System.out.println("i: " + i);
+                temp = (temp + runTimeStack.get(i));
+            }
+        }
+
+        return temp;
+    }
+
+
     public void dump()
     {
 
+        //I worked with Stephanie Sechrist on this dump function.
+        //Professor Souza asked that we state we worked on this together.
         ArrayList<Integer> cloneStack;
         cloneStack = (ArrayList)runTimeStack.clone();
         ArrayList holdArray[] = new ArrayList[framePointer.size()];

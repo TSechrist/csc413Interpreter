@@ -17,4 +17,9 @@ public class HaltCode extends ByteCode {
         vm.setRunning(false);
 
     }
+
+    public String print(){
+
+        return ("HALT\n");
+    }
 }

@@ -24,4 +24,9 @@ public class LoadCode extends ByteCode {
 
         vm.loadStack(value);
     }
+
+    public String print(){
+
+        return ("LOAD " + value + " " + comment + "\n");
+    }
 }

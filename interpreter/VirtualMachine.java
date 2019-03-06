@@ -31,8 +31,11 @@ public class VirtualMachine {
             pc++;
             if(isDumping)
             {
-                System.out.println(code.getClass().getSimpleName());
-                runStack.dump();
+                if(!(code instanceof DumpCode))
+                {
+                    System.out.print(code.print());
+                    runStack.dump();
+                }
             }
         }
 
@@ -88,6 +91,11 @@ public class VirtualMachine {
     public void popFrame(){
 
         runStack.popFrame();
+    }
+
+    public String peekFrame(){
+
+        return runStack.peekFrame();
     }
 
     public int storeStack(int value){

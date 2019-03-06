@@ -29,4 +29,9 @@ public class ReadCode extends ByteCode {
         }
 
     }
+
+    public String print(){
+
+        return ("READ\n");
+    }
 }

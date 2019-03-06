@@ -28,4 +28,9 @@ public class PopCode extends ByteCode {
             vm.popStack();
         }
     }
+
+    public String print(){
+
+        return ("POP " + value + "\n");
+    }
 }

@@ -8,6 +8,7 @@ public class CallCode extends ByteCode {
 
     private String label;
     private int point;
+    private String argumentsPassed = "";
 
     @Override
     public void init(ArrayList<String> argument) {
@@ -18,6 +19,7 @@ public class CallCode extends ByteCode {
     @Override
     public void execute(VirtualMachine vm) {
 
+        argumentsPassed = vm.peekFrame();
         vm.pushReturnAddrs(vm.getPc());
         vm.setPc(point);
     }
@@ -32,4 +34,8 @@ public class CallCode extends ByteCode {
         point = newPoint;
     }
 
+    public String print(){
+
+        return ("CALL " + label + "  " + label + "(" + argumentsPassed +  ")\n");
+    }
 }

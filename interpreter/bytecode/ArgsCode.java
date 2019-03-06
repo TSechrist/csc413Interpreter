@@ -19,4 +19,10 @@ public class ArgsCode extends ByteCode {
 
         vm.newFrame(value);
     }
+
+    public String print(){
+
+        return ("ARGS " + value + "\n");
+    }
+
 }

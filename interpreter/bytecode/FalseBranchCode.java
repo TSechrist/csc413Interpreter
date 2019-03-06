@@ -35,4 +35,8 @@ public class FalseBranchCode extends ByteCode {
         point = newPoint;
     }
 
+    public String print(){
+
+        return ("FALSEBRANCH " + label + "\n");
+    }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class LitCode extends ByteCode {
 
     private int value;
-    private String comment;
+    private String comment = "";
 
     @Override
     public void init(ArrayList<String> argument) {
@@ -23,5 +23,10 @@ public class LitCode extends ByteCode {
     public void execute(VirtualMachine vm) {
 
         vm.pushStack(value);
+    }
+
+    public String print(){
+
+        return ("LIT " + value + " " + comment + "\n");
     }
 }

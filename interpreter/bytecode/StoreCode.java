@@ -24,4 +24,8 @@ public class StoreCode extends ByteCode {
 
         vm.storeStack(value);
     }
+    public String print(){
+
+        return ("STORE " + value + " " + comment + "\n");
+    }
 }

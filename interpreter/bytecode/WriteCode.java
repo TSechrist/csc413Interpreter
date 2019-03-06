@@ -16,4 +16,9 @@ public class WriteCode extends ByteCode {
 
         System.out.println(vm.peekStack());
     }
+
+    public String print(){
+
+        return ("WRITE\n");
+    }
 }

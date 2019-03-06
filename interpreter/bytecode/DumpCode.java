@@ -26,4 +26,9 @@ public class DumpCode extends ByteCode {
 
         vm.setDumping(state);
     }
+
+    public String print(){
+
+        return ("");
+    }
 }
