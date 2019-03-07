@@ -101,11 +101,24 @@ public class RunTimeStack {
     public String peekFrame(){
 
         String temp = "";
+        boolean flag = true;
         if(framePointer.peek() != 0 && framePointer.peek() != runTimeStack.size())
         {
-            for(int i = framePointer.peek(); i != framePointer.peek() - 1; i--)
+            for(int i = framePointer.peek(); i < runTimeStack.size(); i++)
             {
+<<<<<<< HEAD
                 temp = (temp + runTimeStack.get(i));
+=======
+                if(flag)
+                {
+                    temp = ("" + runTimeStack.get(i));
+                    flag = false;
+                }
+                else
+                {
+                    temp = (temp + ", " + runTimeStack.get(i));
+                }
+>>>>>>> 8c0916df8c5f7ea0ee79a5f0e03cff7dd4ab75c4
             }
         }
 

@@ -51,7 +51,7 @@ public class Program {
                 {
                     if(((GotoCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
                     {
-                        ((GotoCode)temp).setPoint(labelList.get(j).getPoint());
+                        ((GotoCode)temp).setPoint(labelList.get(j).getPoint() - 1);
                     }
                 }
             }
@@ -61,7 +61,7 @@ public class Program {
                 for(int j = 0; j < labelList.size(); j ++) {
                     if (((FalseBranchCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
                     {
-                        ((FalseBranchCode)temp).setPoint(labelList.get(j).getPoint());
+                        ((FalseBranchCode)temp).setPoint(labelList.get(j).getPoint() - 1);
                     }
                 }
             }
@@ -72,7 +72,7 @@ public class Program {
                 {
                     if(((CallCode)temp).getLabel().equals((labelList.get(j)).getLabel()))
                     {
-                        ((CallCode)temp).setPoint(labelList.get(j).getPoint());
+                        ((CallCode)temp).setPoint(labelList.get(j).getPoint() - 1);
                     }
                 }
             }

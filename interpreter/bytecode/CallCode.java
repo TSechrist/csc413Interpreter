@@ -45,10 +45,17 @@ public class CallCode extends ByteCode {
     public String print(){
 
         String formattedLabel = label;
-        if(!(label.isEmpty()) && label.charAt(0) == '<' && label.charAt(1) == '<')
-        {
 
+        for(int i = 0; i < (label.length() - 1); i++)
+        {
+//            System.out.println("i: " + label.charAt(i));
+            if(label.charAt(i) == '<' && label.charAt(i + 1) == '<')
+            {
+//                System.out.println("Inside If Statement");
+                formattedLabel = label.substring(0, i);
+            }
         }
-        return ("CALL " + label + "  " + formattedLabel + "(" + argumentsPassed +  ")\n");
+
+        return ("CALL " + label + " " + formattedLabel + "(" + argumentsPassed +  ")\n");
     }
 }
