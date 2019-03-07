@@ -4,6 +4,10 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+LoadCode will
+ */
+
 public class LoadCode extends ByteCode {
 
     private int value;

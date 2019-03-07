@@ -4,6 +4,12 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*ReturnCode is the return from a function. It
+will pop the top return address on the address
+stack and set the pc to that location. It will then pop the
+frame.
+ */
+
 public class ReturnCode extends ByteCode {
 
     private String comment = "";

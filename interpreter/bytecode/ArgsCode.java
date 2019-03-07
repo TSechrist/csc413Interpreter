@@ -4,6 +4,12 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+ArgsCode is an extension of ByteCode that will
+setup a new frame in our framePointer, passing
+along the arguments to the next function call.
+ */
+
 public class ArgsCode extends ByteCode {
 
     private int value;

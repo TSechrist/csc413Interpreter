@@ -26,12 +26,11 @@ public class VirtualMachine {
         while(isRunning)
         {
             ByteCode code = program.getCode(pc);
-//            System.out.println(program.getCode(pc) + " " + pc);
             code.execute(this);
             pc++;
             if(isDumping)
             {
-                if(!(code instanceof DumpCode))
+                if(!(code instanceof DumpCode)) //If dumping is on I still don't want to print a DumpCode
                 {
                     System.out.print(code.print());
                     runStack.dump();
@@ -50,6 +49,7 @@ public class VirtualMachine {
         isDumping = boolDumping;
     }
 
+    //These will change the pc order of our program.
     public int getPc() {
 
         return pc;

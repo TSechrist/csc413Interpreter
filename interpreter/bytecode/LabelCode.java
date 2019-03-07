@@ -4,6 +4,12 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+LabelCode is a placeholder to help resolve all of the
+address jumps. It is the location where CallCode, GotoCode,
+and FalseBranchCode will jump to.
+ */
+
 public class LabelCode extends ByteCode {
 
     private String label;

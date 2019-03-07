@@ -4,6 +4,12 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+PopCode will ask the VM to pop the top of the runtimestack.
+It will ask for it to pop as many times as given in the
+argument.
+ */
+
 public class PopCode extends ByteCode {
 
     private int value;

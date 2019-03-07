@@ -4,6 +4,11 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+LitCode takes a single argument and pushes the argument onto
+the top of the RunTimeStack.
+ */
+
 public class LitCode extends ByteCode {
 
     private int value;

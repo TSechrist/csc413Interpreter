@@ -5,6 +5,11 @@ import interpreter.VirtualMachine;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ReadCode will give a prompt to enter a number and
+take an input that will be pushed onto the RunTimeStack.
+ */
+
 public class ReadCode extends ByteCode {
 
     private String input;

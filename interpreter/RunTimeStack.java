@@ -71,6 +71,8 @@ public class RunTimeStack {
         framePointer.add((runTimeStack.size()) - value);
     }
 
+    //This method will remove items off the RunTimeStack til
+    //it is as big as the top value at the frame pointer.
     public void popFrame(){
 
         int temp = runTimeStack.get(runTimeStack.size() - 1);
@@ -103,7 +105,6 @@ public class RunTimeStack {
         {
             for(int i = framePointer.peek(); i != framePointer.peek() - 1; i--)
             {
-                System.out.println("i: " + i);
                 temp = (temp + runTimeStack.get(i));
             }
         }
@@ -117,6 +118,8 @@ public class RunTimeStack {
 
         //I worked with Stephanie Sechrist on this dump function.
         //Professor Souza asked that we state we worked on this together.
+        //I cloned the RunTimeStack and removed the values one by one
+        //on it and add them to a placeholder array. Then just display that array.
         ArrayList<Integer> cloneStack;
         cloneStack = (ArrayList)runTimeStack.clone();
         ArrayList holdArray[] = new ArrayList[framePointer.size()];

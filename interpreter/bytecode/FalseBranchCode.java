@@ -4,6 +4,12 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+FalseBranchCode is our conditional tool for this language.
+It will jump to the saved address that he has stored if
+the top of the RunTimeStack is 0, otherwise it will do nothing else.
+ */
+
 public class FalseBranchCode extends ByteCode {
 
     private String label;

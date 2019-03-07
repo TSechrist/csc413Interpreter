@@ -31,6 +31,12 @@ public class ByteCodeLoader extends Object {
      *      Parse any additional arguments for the given ByteCode and send them to
      *      the newly created ByteCode instance via the init function.
      */
+
+    //loadCode will initialize all of the ByteCodes in our byteSource.
+    //The method will parse out by line and add the bytecodes to a program.
+    //At the end of the method the program will attempt to resolve all of
+    //the jumps made.
+
     public Program loadCodes() {
 
         Program loadedProgram = new Program();

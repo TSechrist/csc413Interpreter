@@ -4,6 +4,14 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+CallCode is used to call functions in our programs.
+It gets its pc location resolved in the resolve
+address method in program. When call is executed it will
+save it's current location of pc onto the return address
+stack, then set the pc to the saved location.
+ */
+
 public class CallCode extends ByteCode {
 
     private String label;

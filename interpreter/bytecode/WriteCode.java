@@ -4,6 +4,11 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+WriteCode will display the top of the RunTimeStack to the
+console.
+ */
+
 public class WriteCode extends ByteCode {
 
     @Override

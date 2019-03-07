@@ -4,6 +4,11 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+GotoCode is a jump in our bytecode. It gets its address destination
+during the programs resolve address and store it until executed.
+ */
+
 public class GotoCode extends ByteCode {
 
     private String label;

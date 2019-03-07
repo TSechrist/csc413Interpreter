@@ -4,6 +4,13 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/*
+BopCode is an extension of ByteCode that will
+take the top two elements in the RunTimeStack
+and perform an operation on them, and push the
+result from the operation.
+ */
+
 public class BopCode extends ByteCode {
 
     private String operator;
